@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все проекты — Портфолио</title>
+    <meta name="description" content="Страница со ссылками на проекты и дополнительной информацией.">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#extras">Дополнительно</a></li>
+                <li><a href="#contact">Связаться</a></li>
+            </ul>
+        </nav>
+        <h1>Все проекты</h1>
+        <p>Здесь собраны ссылки на мои учебные и пет‑проекты с краткими описаниями.</p>
+    </header>
+
+    <main>
+        <section id="projects" aria-labelledby="projects-title">
+            <h2 id="projects-title">Список проектов</h2>
+            <ol>
+                <li>
+                    <article>
+                        <h3><a href="#proj-console">Консольный скрипт</a></h3>
+                        <p>Минимальный проект с выводом сообщения в консоль.</p>
+                        <p><a id="proj-console" href="https://github.com/voodoo239" rel="noopener">Репозиторий/профиль</a></p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3><a href="#proj-sum">Функция сложения</a></h3>
+                        <p>Небольшой пример с объявлением и использованием функции.</p>
+                        <p><a id="proj-sum" href="https://github.com/voodoo239" rel="noopener">Репозиторий/профиль</a></p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3><a href="#proj-card">HTML‑карточка</a></h3>
+                        <p>Фрагмент разметки карточки проекта без стилей.</p>
+                        <p><a id="proj-card" href="https://github.com/voodoo239" rel="noopener">Репозиторий/профиль</a></p>
+                    </article>
+                </li>
+            </ol>
+
+            <section aria-labelledby="samples-title">
+                <h3 id="samples-title">Небольшие примеры кода</h3>
+                <article>
+                    <h4>Пример 1 — вывод в консоль</h4>
+                    <pre><code>console.log('Hello from projects page');</code></pre>
+                </article>
+                <article>
+                    <h4>Пример 2 — простая функция</h4>
+                    <pre><code>function greet(name) {
+  return 'Привет, ' + name + '!';
+}
+
+greet('Никита');</code></pre>
+                </article>
+            </section>
+        </section>
+
+        <section id="extras" aria-labelledby="extras-title">
+            <h2 id="extras-title">Дополнительно</h2>
+            <article>
+                <h3>Идеи для будущих проектов</h3>
+                <ul>
+                    <li>Мини‑блог на чистом HTML‑контенте</li>
+                    <li>Список дел (to‑do) с локальным хранением</li>
+                    <li>Галерея изображений с подписями</li>
+                </ul>
+            </article>
+            <article>
+                <h3>FAQ</h3>
+                <details>
+                    <summary>Как связаться по проектам?</summary>
+                    <p>Напишите на почту или в мессенджер — контакты ниже.</p>
+                </details>
+                <details>
+                    <summary>Можно предложить идею?</summary>
+                    <p>Да, с удовольствием рассмотрю. Опишите задачу и желаемый результат.</p>
+                </details>
+            </article>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Связаться</h2>
+            <ul>
+                <li><a href="mailto:kochetkov.nikitaspb@gmail.com">Email</a></li>
+                <li><a href="https://t.me/nek1tko">Telegram</a></li>
+                <li><a href="index.html#contacts">Другие контакты на главной</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Никита Кочетков.</p>
+        <p><a href="#projects">К началу списка</a> · <a href="index.html">На главную</a></p>
+    </footer>
+</body>
+</html>
+
