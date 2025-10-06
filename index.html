@@ -3,59 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Портфолио разработчика</title>
     <meta name="description" content="Портфолио начинающего веб-разработчика: обо мне, проекты, цитата и контакты.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#about">Обо мне</a></li>
-                <li><a href="#projects">Проекты</a></li>
-                <li><a href="projects.html">Все проекты</a></li>
-                <li><a href="#quote">Цитата</a></li>
-                <li><a href="#contacts">Контакты</a></li>
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#home">Главная</a></li>
+                <li class="nav__item"><a class="nav__link" href="#about">Обо мне</a></li>
+                <li class="nav__item"><a class="nav__link" href="#projects">Проекты</a></li>
+                <li class="nav__item"><a class="nav__link" href="projects.html">Все проекты</a></li>
+                <li class="nav__item"><a class="nav__link" href="#quote">Цитата</a></li>
+                <li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home" aria-labelledby="home-title">
+        <section id="home" class="section section--home" aria-labelledby="home-title">
             <h1 id="home-title">Привет! Я начинающий разработчик</h1>
-            <figure>
+            <figure class="figure">
                 <img src="https://cdnstatic.rg.ru/uploads/images/207/52/27/2p_udalenka_v_2k.jpg" alt="Портрет разработчика" width="200" height="200">
+                <figcaption class="figure__caption">Портрет разработчика</figcaption>
             </figure>
             <p>Делаю небольшие учебные и пет‑проекты, учусь веб‑разработке и люблю аккуратную семантическую разметку.</p>
             <p>На этом сайте вы найдёте краткую информацию обо мне, примеры кода и способы связи.</p>
         </section>
 
-        <section id="about" aria-labelledby="about-title">
+        <section id="about" class="section section--about" aria-labelledby="about-title">
             <h2 id="about-title">Обо мне</h2>
             <p>Меня зовут Кочетков Никита. Я студент 3 курса направления «Информационные системы и технологии» и развиваюсь как веб‑разработчик. Этот сайт — часть учебных работ по веб‑разработке и место для демонстрации первых результатов.</p>
-            <p>Интересуюсь основами front‑end и знакомлюсь с back‑end. Предпочитаю начинать с простых, понятных решений, постепенно усложняя проекты по мере роста навыков.</p>
+            <p>Интересуюсь основами front‑end и знакомлюсь с back‑end. Предпочитаю начинать с простых, понятных решений, постепенно усложняя проекты по мере роста навыков. <mark>Цель</mark> — делать чистые и понятные интерфейсы.</p>
         </section>
 
-        <section id="projects" aria-labelledby="projects-title">
+        <section id="projects" class="section section--projects" aria-labelledby="projects-title">
             <h2 id="projects-title">Проекты</h2>
-            <article aria-labelledby="proj-1-title">
-                <h3 id="proj-1-title">Небольшой скрипт вывода сообщения</h3>
-                <p>Простейший пример использования консоли для вывода текста. Код приведён как демонстрация оформления в теге code.</p>
+            <article class="card" aria-labelledby="proj-1-title">
+                <h3 class="card__title" id="proj-1-title">Небольшой скрипт вывода сообщения</h3>
+                <p class="card__text">Простейший пример использования консоли для вывода текста. Код приведён как демонстрация оформления в теге <code>code</code>.</p>
                 <pre><code>console.log('Hello, world!');</code></pre>
             </article>
-            <article aria-labelledby="proj-2-title">
-                <h3 id="proj-2-title">Функция сложения</h3>
-                <p>Ещё один минимальный пример с объявлением функции и вызовом.</p>
+            <article class="card" aria-labelledby="proj-2-title">
+                <h3 class="card__title" id="proj-2-title">Функция сложения</h3>
+                <p class="card__text">Ещё один минимальный пример с объявлением функции и вызовом.</p>
                 <pre><code>function sum(a, b) {
   return a + b;
 }
 
 sum(2, 3);</code></pre>
             </article>
-            <article aria-labelledby="proj-3-title">
-                <h3 id="proj-3-title">Фрагмент HTML‑карточки</h3>
-                <p>Небольшая HTML‑разметка карточки проекта без стилей.</p>
+            <article class="card" aria-labelledby="proj-3-title">
+                <h3 class="card__title" id="proj-3-title">Фрагмент HTML‑карточки</h3>
+                <p class="card__text">Небольшая HTML‑разметка карточки проекта без стилей.</p>
                 <pre><code>&lt;article class="card"&gt;
   &lt;h4&gt;Заголовок проекта&lt;/h4&gt;
   &lt;p&gt;Короткое описание проекта без дополнительного оформления.&lt;/p&gt;
@@ -63,7 +67,7 @@ sum(2, 3);</code></pre>
             </article>
         </section>
 
-        <section id="quote" aria-labelledby="quote-title">
+        <section id="quote" class="section section--quote" aria-labelledby="quote-title">
             <h2 id="quote-title">Цитата</h2>
             <blockquote>
                 «Программирование — это не только написание кода, это искусство решения проблем.»
@@ -71,21 +75,21 @@ sum(2, 3);</code></pre>
             </blockquote>
         </section>
 
-        <section id="contacts" aria-labelledby="contacts-title">
+        <section id="contacts" class="section section--contacts" aria-labelledby="contacts-title">
             <h2 id="contacts-title">Контакты</h2>
-            <p>Вы можете связаться со мной удобным способом из списка ниже.</p>
+            <p>Вы можете связаться со мной удобным способом из списка ниже. Некоторыми старыми адресами я <del>не пользуюсь</del> — используйте актуальные.</p>
             <ul>
                 <li><a href="mailto:kochetkov.nikitaspb@gmail.com">Email</a></li>
                 <li><a href="https://github.com/voodoo239">GitHub</a></li>
                 <li><a href="https://t.me/nek1tko">Telegram</a></li>
-                <li><a href="https://vk.com/username">VK</a></li>
+                <li><a href="https://vk.com/username"><ins>VK</ins></a></li>
             </ul>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>© 2025 Никита Кочетков. Все права защищены.</p>
-        <p><a href="#home">Наверх</a></p>
+        <p><a class="footer__link" href="#home">Наверх</a></p>
     </footer>
 </body>
 </html>
