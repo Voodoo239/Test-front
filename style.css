@@ -62,8 +62,22 @@ li{margin:6px 0}
 a{color:var(--color-accent); text-decoration:underline; text-underline-offset:3px}
 a:hover{text-decoration-thickness:2px}
 
-/* Цвет выделения текста */
-::selection{background:rgba(51,144,236,.35); color:#fff}
+/* Цвет выделения текста (только на текстовых элементах) */
+p::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+li::selection,
+a::selection,
+span::selection,
+strong::selection,
+em::selection,
+cite::selection,
+.figure__caption::selection,
+blockquote::selection,
+code::selection,
+pre code::selection{background:rgba(51,144,236,.35); color:#fff}
 
 /* Цитата и код */
 blockquote{
