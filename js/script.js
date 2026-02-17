@@ -4,7 +4,7 @@
   function displayPageLoadTime() {
     window.addEventListener('load', function() {
       
-      const loadTimeSeconds = (performance.now() / 1000).toFixed(3);
+      const loadTimeSeconds = (performance.now() / 1000);
       
       const footer = document.querySelector('.footer');
       if (footer) {
