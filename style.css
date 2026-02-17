@@ -1,10 +1,9 @@
 :root{
-  /* Telegram-like dark palette */
-  --color-bg: #0e1621;        /* main background */
-  --color-surface: #17212b;   /* surfaces/cards */
-  --color-text: #e9eef3;      /* primary text */
-  --color-muted: #a0b3c6;     /* secondary text */
-  --color-accent: #3390ec;    /* Telegram blue */
+  --color-bg: #0e1621;
+  --color-surface: #17212b;
+  --color-text: #e9eef3;
+  --color-muted: #a0b3c6;
+  --color-accent: #3390ec;    
   --radius: 12px;
   --shadow: 0 6px 20px rgba(0,0,0,.25);
 }
@@ -19,8 +18,10 @@ body{
   line-height:1.7;
 }
 
-/* Навигация */
-.header{background:rgba(17,24,39,.6); backdrop-filter:saturate(180%) blur(10px)}
+.header{
+  position:sticky; top:0; z-index:10;
+  background:rgba(17,24,39,.6); backdrop-filter:saturate(180%) blur(10px)
+}
 .header--projects{display:flex; flex-direction:column; align-items:center; text-align:center}
 .header--projects h1, .header--projects p{max-width:900px; width:100%; margin:8px auto; text-align:center}
 .nav__list{list-style:none; margin:0; padding:12px 20px; display:flex; gap:16px; flex-wrap:wrap}
@@ -33,18 +34,57 @@ body{
   background:rgba(51,144,236,.14); color:#f2f7fb; outline:none
 }
 
-/* Секции */
+main{max-width:100%; margin:0 auto}
 .section{padding:24px 20px; max-width:900px; margin:0 auto}
 .section--home{padding-top:32px}
+
+.section--projects{
+  display:grid; grid-template-columns:1fr; gap:16px;
+}
+.section--projects h2{grid-column:1 / -1}
+.section--projects .card{margin:0}
+
+.section--gallery .gallery{
+  display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;
+}
+.section--gallery .gallery img{
+  width:100%; height:auto; aspect-ratio:1; object-fit:cover; border-radius:var(--radius);
+}
+
+.footer-banner{
+  display:none;
+  width:100%; padding:14px 20px; text-align:center;
+  background:rgba(51,144,236,.15); color:var(--color-muted);
+  font-size:.9rem; letter-spacing:.05em;
+}
+
+.tech-table{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(80px, 1fr));
+  width:100%; border-collapse:collapse;
+}
+.tech-table thead, .tech-table tbody, .tech-table tr{display:contents}
+.tech-table th, .tech-table td{
+  padding:10px 12px; border:1px solid rgba(255,255,255,.08);
+  text-align:left; background:var(--color-surface);
+}
+.tech-table th{
+  font-weight:600; color:var(--color-accent);
+  background:rgba(51,144,236,.12);
+}
+.tech-table tbody td:nth-child(3n+1),
+.tech-table tbody td:nth-child(3n+2),
+.tech-table tbody td:nth-child(3n+3){background:var(--color-surface)}
+.tech-table tbody td:nth-child(6n+4),
+.tech-table tbody td:nth-child(6n+5),
+.tech-table tbody td:nth-child(6n+6){background:rgba(255,255,255,.04)}
 .section h1, .section h2, .section h3, .section h4{letter-spacing:.2px; margin:0 0 12px}
 .section p{color:var(--color-text); margin:0 0 12px}
 
-/* Фигура */
 .figure{margin:12px 0; text-align:center}
 .figure img{width:200px; height:200px; object-fit:cover; border-radius:50%; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.06)}
 .figure__caption{color:var(--color-muted); font-size:.9rem; margin-top:8px}
 
-/* Карточки проектов */
 .card{
   background:var(--color-surface); border:1px solid rgba(255,255,255,.06);
   border-radius:var(--radius); padding:16px; margin:12px 0; box-shadow:0 1px 0 rgba(255,255,255,.04);
@@ -54,15 +94,12 @@ body{
 .card__title{font-size:1.1rem; font-weight:600; margin:0 0 8px}
 .card__text{color:var(--color-muted)}
 
-/* Списки */
 ul, ol{padding-left:20px}
 li{margin:6px 0}
 
-/* Ссылки общие */
 a{color:var(--color-accent); text-decoration:underline; text-underline-offset:3px}
 a:hover{text-decoration-thickness:2px}
 
-/* Цвет выделения текста (только на текстовых элементах) */
 p::selection,
 h1::selection,
 h2::selection,
@@ -79,7 +116,6 @@ blockquote::selection,
 code::selection,
 pre code::selection{background:rgba(51,144,236,.35); color:#fff}
 
-/* Цитата и код */
 blockquote{
   margin:16px 0; padding:12px 16px; background:rgba(51,144,236,.10);
   border-left:4px solid var(--color-accent); border-radius:8px;
@@ -93,14 +129,24 @@ pre, code{
 pre{padding:12px 14px; overflow:auto; line-height:1.6}
 code{padding:1px 4px; border-radius:6px}
 
-/* Текстовые эффекты */
 mark{background:#f59e0b33; color:#fff; padding:0 .25em; border-radius:.25em}
 del{text-decoration:line-through; opacity:.8}
 ins{text-decoration:underline; text-underline-offset:2px}
 
-/* Контакты/футер */
 .footer{padding:20px; text-align:center; color:var(--color-muted)}
 .footer__link{color:var(--color-text); text-decoration:none; padding:6px 8px; border-radius:6px}
 .footer__link:hover{text-decoration:underline}
 
 
+@media (min-width: 768px){
+  .footer-banner{display:block}
+  .section--projects{grid-template-columns:repeat(2, 1fr)}
+  .section--gallery .gallery{grid-template-columns:repeat(4, 1fr)}
+}
+@media (min-width: 1440px){
+  .section{max-width:1200px}
+  .tech-table{grid-template-columns:repeat(3, minmax(100px, 1fr))}
+}
+@media (min-aspect-ratio: 21/9){
+  main{max-width:1920px; margin-left:auto; margin-right:auto}
+}
