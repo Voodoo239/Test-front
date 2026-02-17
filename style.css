@@ -86,10 +86,12 @@ main{max-width:100%; margin:0 auto}
 .figure__caption{color:var(--color-muted); font-size:.9rem; margin-top:8px}
 
 .card{
+  min-width:0;
   background:var(--color-surface); border:1px solid rgba(255,255,255,.06);
   border-radius:var(--radius); padding:16px; margin:12px 0; box-shadow:0 1px 0 rgba(255,255,255,.04);
   transition:transform .2s ease, box-shadow .2s ease
 }
+.card pre{overflow-x:auto; -webkit-overflow-scrolling:touch}
 .card:hover{transform:translateY(-2px); box-shadow:var(--shadow)}
 .card__title{font-size:1.1rem; font-weight:600; margin:0 0 8px}
 .card__text{color:var(--color-muted)}
@@ -126,7 +128,7 @@ pre, code{
   font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
   background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06); border-radius:8px
 }
-pre{padding:12px 14px; overflow:auto; line-height:1.6}
+pre{padding:12px 14px; overflow-x:auto; overflow-y:visible; line-height:1.6; max-width:100%}
 code{padding:1px 4px; border-radius:6px}
 
 mark{background:#f59e0b33; color:#fff; padding:0 .25em; border-radius:.25em}
@@ -137,7 +139,10 @@ ins{text-decoration:underline; text-underline-offset:2px}
 .footer__link{color:var(--color-text); text-decoration:none; padding:6px 8px; border-radius:6px}
 .footer__link:hover{text-decoration:underline}
 
-
+/* Лаб. 3: адаптив — смартфон, ноутбук Full HD, WQHD, широкоформатный 21:9 */
+@media (max-width: 767px){
+  .header{position:static}
+}
 @media (min-width: 768px){
   .footer-banner{display:block}
   .section--projects{grid-template-columns:repeat(2, 1fr)}
