@@ -17,7 +17,9 @@
                 <li class="nav__item"><a class="nav__link" href="#home">Главная</a></li>
                 <li class="nav__item"><a class="nav__link" href="#about">Обо мне</a></li>
                 <li class="nav__item"><a class="nav__link" href="#projects">Проекты</a></li>
+                <li class="nav__item"><a class="nav__link" href="#gallery">Фото</a></li>
                 <li class="nav__item"><a class="nav__link" href="projects.html">Все проекты</a></li>
+                <li class="nav__item"><a class="nav__link" href="#tech">Технологии</a></li>
                 <li class="nav__item"><a class="nav__link" href="#quote">Цитата</a></li>
                 <li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a></li>
             </ul>
@@ -39,6 +41,16 @@
             <h2 id="about-title">Обо мне</h2>
             <p>Меня зовут Кочетков Никита. Я студент 3 курса направления «Информационные системы и технологии» и развиваюсь как веб‑разработчик. Этот сайт — часть учебных работ по веб‑разработке и место для демонстрации первых результатов.</p>
             <p>Интересуюсь основами front‑end и знакомлюсь с back‑end. Предпочитаю начинать с простых, понятных решений, постепенно усложняя проекты по мере роста навыков. <mark>Цель</mark> — делать чистые и понятные интерфейсы.</p>
+        </section>
+
+        <section id="gallery" class="section section--gallery" aria-labelledby="gallery-title">
+            <h2 id="gallery-title">Фото</h2>
+            <div class="gallery">
+                <img src="2025-10-08 08.27.10.jpg" alt="Фото 1" width="200" height="200">
+                <img src="2025-10-08 08.27.10.jpg" alt="Фото 2" width="200" height="200">
+                <img src="2025-10-08 08.27.10.jpg" alt="Фото 3" width="200" height="200">
+                <img src="2025-10-08 08.27.10.jpg" alt="Фото 4" width="200" height="200">
+            </div>
         </section>
 
         <section id="projects" class="section section--projects" aria-labelledby="projects-title">
@@ -102,7 +114,43 @@ public OwnerDTO createOwner(@RequestBody OwnerDTO ownerDTO) {
 }
         </code></pre>
     </article>
-            
+        </section>
+
+        <section id="tech" class="section section--tech" aria-labelledby="tech-title">
+            <h2 id="tech-title">Используемые технологии</h2>
+            <table class="tech-table">
+                <thead>
+                    <tr>
+                        <th>Технология</th>
+                        <th>Назначение</th>
+                        <th>Уровень</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML / CSS</td>
+                        <td>Вёрстка, стили</td>
+                        <td>Базовый</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>Интерактивность</td>
+                        <td>Изучаю</td>
+                    </tr>
+                    <tr>
+                        <td>Java, Spring Boot</td>
+                        <td>Backend</td>
+                        <td>Учебные проекты</td>
+                    </tr>
+                    <tr>
+                        <td>C++</td>
+                        <td>Алгоритмы, структуры данных</td>
+                        <td>Базовый</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
         <section id="quote" class="section section--quote" aria-labelledby="quote-title">
             <h2 id="quote-title">Цитата</h2>
             <blockquote>
@@ -123,6 +171,7 @@ public OwnerDTO createOwner(@RequestBody OwnerDTO ownerDTO) {
         </section>
     </main>
 
+    <div class="footer-banner" aria-hidden="true">Учебный проект · Веб-разработка</div>
     <footer class="footer">
         <p>© 2025 Никита Кочетков. Все права защищены.</p>
         <p><a class="footer__link" href="#home">Наверх</a></p>
