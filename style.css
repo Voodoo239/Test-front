@@ -71,10 +71,10 @@ main{max-width:100%; margin:0 auto}
   background:rgba(51,144,236,.15);
 }
 .tech-table tr:nth-child(even) td {
-  background-color:#14191f;
+  background-color: #14191f;
 }
 .tech-table tr:nth-child(odd) td {
-  background-color:#1e2936;
+  background-color: #1e2936;
 }
 .section h1, .section h2, .section h3, .section h4{letter-spacing:.2px; margin:0 0 12px}
 .section p{color:var(--color-text); margin:0 0 12px}
