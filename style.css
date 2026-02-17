@@ -44,12 +44,10 @@ main{max-width:100%; margin:0 auto}
 .section--projects h2{grid-column:1 / -1}
 .section--projects .card{margin:0}
 
-.section--gallery .gallery{
-  display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;
+.section--langs .langs-grid{
+  display:grid; grid-template-columns:repeat(2, 1fr); gap:16px;
 }
-.section--gallery .gallery img{
-  width:100%; height:auto; aspect-ratio:1; object-fit:cover; border-radius:var(--radius);
-}
+.section--langs .lang-card{margin:0}
 
 .footer-banner{
   display:none;
@@ -146,7 +144,7 @@ ins{text-decoration:underline; text-underline-offset:2px}
 @media (min-width: 768px){
   .footer-banner{display:block}
   .section--projects{grid-template-columns:repeat(2, 1fr)}
-  .section--gallery .gallery{grid-template-columns:repeat(4, 1fr)}
+  .section--langs .langs-grid{grid-template-columns:repeat(4, 1fr)}
 }
 @media (min-width: 1440px){
   .section{max-width:1200px}
