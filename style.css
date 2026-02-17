@@ -70,17 +70,17 @@ main{max-width:100%; margin:0 auto}
   font-weight:600; color:var(--color-accent);
   background:rgba(51,144,236,.15);
 }
-/* Нечётные строки (1, 3): светлее */
+/* Нечётные строки (1, 3): базовый фон */
 .tech-table tbody td:nth-child(6n+1),
 .tech-table tbody td:nth-child(6n+2),
 .tech-table tbody td:nth-child(6n+3){
-  background:rgba(51,144,236,.08);
+  background:var(--color-surface);
 }
-/* Чётные строки (2, 4): темнее */
+/* Чётные строки (2, 4): затемнение */
 .tech-table tbody td:nth-child(6n+4),
 .tech-table tbody td:nth-child(6n+5),
 .tech-table tbody td:nth-child(6n+6){
-  background:rgba(0,0,0,.25);
+  background:rgba(0,0,0,.35);
 }
 .section h1, .section h2, .section h3, .section h4{letter-spacing:.2px; margin:0 0 12px}
 .section p{color:var(--color-text); margin:0 0 12px}
