@@ -3,8 +3,9 @@
 
   function displayPageLoadTime() {
     window.addEventListener('load', function() {
-      const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-      const loadTimeSeconds = (loadTime / 1000).toFixed(3);
+      
+      const loadTimeSeconds = (performance.now() / 1000).toFixed(3);
+      
       const footer = document.querySelector('.footer');
       if (footer) {
         const loadTimeElement = document.createElement('p');
@@ -12,6 +13,8 @@
         loadTimeElement.textContent = `Время загрузки страницы: ${loadTimeSeconds} секунд`;
         footer.insertBefore(loadTimeElement, footer.firstChild);
       }
+      
+      console.log('Время загрузки страницы:', loadTimeSeconds, 'сек.');
     });
   }
 
