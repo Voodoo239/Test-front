@@ -73,7 +73,7 @@ main{max-width:100%; margin:0 auto}
 .tech-table tbody td{
   background:#1e2936;
 }
-.tech-table tbody td:nth-child(even){
+.tech-table tbody td:nth-child(even) td {
   background:#14191f;
 }
 .section h1, .section h2, .section h3, .section h4{letter-spacing:.2px; margin:0 0 12px}
