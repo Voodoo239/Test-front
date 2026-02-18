@@ -1,7 +1,7 @@
 (function () {
-      
+  'use strict';
+
   function onPageLoaded() {
-    console.log('Страница загружена, запускаем логику ЛР-4');
     updatePageLoadTime();
     highlightActiveMenuItem();
   }
@@ -20,51 +20,30 @@
     if (span) {
       span.textContent = formatted;
     }
-
-    console.log('Время загрузки страницы:', formatted, 'сек.');
   }
 
   function highlightActiveMenuItem() {
-    const currentPath = window.location.pathname.replace(/\/+$/, '');
+    let currentPath = window.location.pathname.replace(/\/+$/, '');
+    if (currentPath === '' || currentPath === '/') {
+      currentPath = '/index.html';
+    }
     const links = document.querySelectorAll('nav a');
-    
-    links.forEach(link => {
+
+    links.forEach(function (link) {
+      const href = link.getAttribute('href');
+      if (href && href.includes('#')) {
+        link.classList.remove('active');
+        return;
+      }
+
       let linkPath = link.pathname.replace(/\/+$/, '');
-      
+
       if (linkPath === currentPath) {
         link.classList.add('active');
+      } else {
+        link.classList.remove('active');
       }
     });
   }
-  
-})();
-  
- function highlightActiveNavItem() {
-    document.addEventListener('DOMContentLoaded', function () {
-      const currentPath = window.location.pathname;
-      const currentPage = currentPath.split('/').pop() || 'index.html';
-      const navLinks = document.querySelectorAll('.nav__link');
 
-      navLinks.forEach(function (link) {
-        const linkHref = link.getAttribute('href');
-        let isActive = false;
-
-        if (linkHref && !linkHref.startsWith('#')) {
-          if (linkHref.includes(currentPage)) {
-            isActive = true;
-          } else if ((currentPage === 'index.html' || currentPage === '') &&
-            (linkHref === '/' || linkHref === 'index.html' || linkHref === './index.html')) {
-            isActive = true;
-          }
-        }
-
-        if (isActive) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    });
-  }
-  
 })();
