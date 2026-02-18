@@ -25,16 +25,22 @@
     console.log('Время загрузки страницы:', formatted, 'сек.');
   }
   
-  function highlightActiveMenuItem() {
-    const currentPath = window.location.pathname.replace(/\/+$/, '');
-    const links = document.querySelectorAll('nav a');
-    
-    links.forEach(link => {
-      let linkPath = link.pathname.replace(/\/+$/, '');
-      
-      if (linkPath === currentPath) {
-        link.classList.add('active');
-      }
+ function highlightActiveMenuItem() {
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentURL = document.location.pathname;
+      const currentPage = currentURL.substring(currentURL.lastIndexOf("/") + 1) || "index.html";
+
+      const links = document.querySelectorAll(".nav__link");
+
+      links.forEach(link => {
+          const linkURL = new URL(link.href);
+          const linkPage =
+              linkURL.pathname.substring(linkURL.pathname.lastIndexOf("/") + 1);
+
+          if (linkPage === currentPage) {
+              link.classList.add("nav__link--active");
+          }
+      });
     });
   }
   
