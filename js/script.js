@@ -1,29 +1,17 @@
 (function () {
-  'use strict';
+      const startTime = performance.now();
 
-  function onPageLoaded() {
-    console.log('Страница загружена, запускаем логику ЛР-4');
-    updatePageLoadTime();
-    highlightActiveMenuItem();
-  }
-  
-  if (document.readyState === 'complete') {
-    onPageLoaded();
-  } else {
-    window.addEventListener('load', onPageLoaded);
-  }
-  
-  function updatePageLoadTime() {
-    const loadTimeSeconds = performance.now() / 1000;
-    const formatted = loadTimeSeconds.toFixed(3);
-    
-    const span = document.getElementById('page-load-time-value');
-    if (span) {
-      span.textContent = formatted;
-    }
-    
-    console.log('Время загрузки страницы:', formatted, 'сек.');
-  }
+    window.addEventListener("load", function () {
+        const endTime = performance.now();
+        const loadTime = (endTime - startTime).toFixed(2);
+
+        const footer = document.querySelector("footer");
+        if (footer) {
+            const p = document.createElement("p");
+            p.textContent = `Page load in ${loadTime} ms`;
+            footer.appendChild(p);
+        }
+    });
   
   function highlightActiveMenuItem() {
     const currentPath = window.location.pathname.replace(/\/+$/, '');
