@@ -1,34 +1,37 @@
 (function () {
   'use strict';
 
-  function onPageLoaded() {
+    function onPageLoaded() {
     console.log('Страница загружена, запускаем логику ЛР-4');
-    
+
     updatePageLoadTime();
-    
     highlightActiveMenuItem();
   }
-  
+
+  // Подписываемся на событие полной загрузки страницы
   if (document.readyState === 'complete') {
     onPageLoaded();
   } else {
     window.addEventListener('load', onPageLoaded);
   }
-  
-  function updatePageLoadTime() {
 
-    const loadTimeSeconds = performance.now() / 1000;
-    
-    const formatted = loadTimeSeconds.toFixed(3);
-    
+  // --- 1) логика подсчёта времени ---
+  function updatePageLoadTime() {
+    const ms = getPageLoadTimeMs();
+    if (ms == null) {
+      console.warn('Не удалось определить время загрузки через Performance API');
+      return;
+    }
+
+    const seconds = (ms / 1000).toFixed(3);
+
     const span = document.getElementById('page-load-time-value');
     if (span) {
-      span.textContent = formatted;
+      span.textContent = seconds;
     }
-    
-    console.log('Время загрузки страницы:', formatted, 'сек.');
-  }
 
+    console.log('Время загрузки страницы:', seconds, 'сек.');
+  }
   function highlightActiveNavItem() {
     document.addEventListener('DOMContentLoaded', function() {
 
