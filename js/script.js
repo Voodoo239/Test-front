@@ -1,21 +1,18 @@
 (function() {
-  'use strict';
-
+  
   function displayPageLoadTime() {
-    window.addEventListener('load', function() {
-      
-      const loadTime = performance.timing.navigationStart - performance.timing.loadEventEnd;
-      const loadTimeSeconds = (loadTime / 1000).toFixed(3);
-      
-      const footer = document.querySelector('.footer');
+    const startTime = performance.now();
+    
+    window.addEventListener("load", function () {
+      const endTime = performance.now();
+      const loadTime = (endTime - startTime).toFixed(2);
+
+      const footer = document.querySelector("footer");
       if (footer) {
-        const loadTimeElement = document.createElement('p');
-        loadTimeElement.className = 'footer__load-time';
-        loadTimeElement.textContent = `Время загрузки страницы: ${loadTimeSeconds} секунд`;
-        footer.insertBefore(loadTimeElement, footer.firstChild);
+          const p = document.createElement("p");
+          p.textContent = `Page load in ${loadTime} ms`;
+          footer.appendChild(p);
       }
-      
-      console.log('Время загрузки страницы:', loadTimeSeconds, 'сек.');
     });
   }
 
