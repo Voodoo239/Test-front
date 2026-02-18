@@ -13,21 +13,30 @@
         }
     });
   
- function highlightActiveMenuItem() {
-    document.addEventListener("DOMContentLoaded", function () {
-      const currentURL = document.location.pathname;
-      const currentPage = currentURL.substring(currentURL.lastIndexOf("/") + 1) || "index.html";
+ function highlightActiveNavItem() {
+    document.addEventListener('DOMContentLoaded', function () {
+      const currentPath = window.location.pathname;
+      const currentPage = currentPath.split('/').pop() || 'index.html';
+      const navLinks = document.querySelectorAll('.nav__link');
 
-      const links = document.querySelectorAll(".nav__link");
+      navLinks.forEach(function (link) {
+        const linkHref = link.getAttribute('href');
+        let isActive = false;
 
-      links.forEach(link => {
-          const linkURL = new URL(link.href);
-          const linkPage =
-              linkURL.pathname.substring(linkURL.pathname.lastIndexOf("/") + 1);
-
-          if (linkPage === currentPage) {
-              link.classList.add("nav__link--active");
+        if (linkHref && !linkHref.startsWith('#')) {
+          if (linkHref.includes(currentPage)) {
+            isActive = true;
+          } else if ((currentPage === 'index.html' || currentPage === '') &&
+            (linkHref === '/' || linkHref === 'index.html' || linkHref === './index.html')) {
+            isActive = true;
           }
+        }
+
+        if (isActive) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
       });
     });
   }
