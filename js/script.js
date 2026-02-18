@@ -4,7 +4,7 @@
   function displayPageLoadTime() {
     window.addEventListener('load', function() {
       
-      const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+      const loadTime = performance.timing.navigationStart - performance.timing.loadEventEnd;
       const loadTimeSeconds = (loadTime / 1000).toFixed(3);
       
       const footer = document.querySelector('.footer');
